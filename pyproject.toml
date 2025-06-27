@@ -1,0 +1,21 @@
+[project]
+name = "selfie"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate>=0.32.1",
+    "bitsandbytes>=0.46.0",
+    "datasets>=2.14.7",
+    "huggingface-hub>=0.17.3",
+    "numpy>=1.26.4",
+    "pandas>=2.3.0",
+    "torch>=2.7.1",
+    "transformers==4.34.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
