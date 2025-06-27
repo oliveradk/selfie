@@ -728,7 +728,7 @@ def generate_interpret(
         raise ValueError(
             "`streamer` cannot be used with beam search (yet!). Make sure that `num_beams` is set to 1."
         )
-
+    input_ids = input_ids.to(model.device)
     if model.device.type != input_ids.device.type:
         warnings.warn(
             "You are calling transformers.generation.generate() with the `input_ids` being on a device type different"
@@ -843,6 +843,7 @@ def generate_interpret(
             is_encoder_decoder=model.config.is_encoder_decoder,
             **model_kwargs,
         )
+        input_ids = input_ids.to(model.device)
 
         # 13. run sample
         return model.sample(
